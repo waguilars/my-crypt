@@ -113,7 +113,8 @@ modules.xml
 .LSOverride
 
 # Icon must end with two 
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -298,3 +299,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,linux,macos,node,visualstudiocode,windows
+.build/
