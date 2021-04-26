@@ -1,5 +1,5 @@
 import { es as alphabet } from '../../alphabet.json'
-import { isLowerCase } from '../util/char'
+import { isLowerCase } from '../util'
 
 const MAX_ROT = alphabet.length
 
