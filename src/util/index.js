@@ -21,12 +21,24 @@ export const isUpperCase = (char) => {
  * @returns {string} The same key with the text length
  */
 export const normalizeKey = (text, key) => {
-  let newKey = ''.concat(key)
-  while (newKey.length < text.length) {
-    newKey += key
-  }
+  // let newKey = ''.concat(key)
+  // while (newKey.length < text.length) {
+  //   newKey += key
+  // }
 
-  return newKey.slice(0, text.length)
+  let newkey = ''
+
+  let ikey = 0
+  while (newkey.length !== text.length) {
+    if (text[newkey.length] === ' ') {
+      newkey += ' '
+    } else {
+      newkey += key[ikey]
+      ikey = ikey >= key.length - 1 ? 0 : ikey + 1
+    }
+  }
+  return newkey
+  // return newKey.slice(0, text.length)
 }
 
 /**
