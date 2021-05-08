@@ -51,3 +51,43 @@ export const getCharacterIdx = (char, alphabet) => {
   char = char.toUpperCase()
   return alphabet.indexOf(char)
 }
+
+/**
+ * This function find a character into polibio's matrix and return the keys
+ * @param {String} char - Character to find in the matrix
+ * @param {Array<Array<number>>} mtx - Polibio's matrix
+ *
+ * @returns {Array<number>} An array with the keys of the character
+ */
+export const findKeyFromCharacter = (char, mtx) => {
+  const charUpper = char.toUpperCase()
+  const keys = ['A', 'B', 'C', 'D', 'E']
+
+  for (let i = 0; i < mtx.length; i++) {
+    for (let j = 0; j < mtx[0].length; j++) {
+      if (charUpper === mtx[i][j]) {
+        return [keys[i], keys[j]].join('')
+      }
+
+      if (charUpper === 'J' && mtx[i][j] === 'I') {
+        return [keys[i], keys[j]].join('')
+      }
+    }
+  }
+}
+
+/**
+ * Find the original value in the polibio's matrix using the key
+ * @param {string} key A string with the key to be finded
+ * @param {string[][]} mtx Polibio's matrix to desencrypt the key
+ * @returns {string} a character decrypted
+ */
+export const findCharacterFromKey = (key, mtx) => {
+  const [key1, key2] = key.toUpperCase()
+  const keys = ['A', 'B', 'C', 'D', 'E']
+
+  const index1 = keys.indexOf(key1)
+  const index2 = keys.indexOf(key2)
+
+  return mtx[index1][index2]
+}
