@@ -48,6 +48,8 @@ const decrypt = (text, key) => {
   key = normalizeKey(text, key)
 
   const decryptedText = text.map((char, i) => {
+    if (char === ' ') { return char }
+
     const isLower = isLowerCase(char)
     const textIdx = getCharacterIdx(char, alphabet)
     const keyIdx = getCharacterIdx(key[i], alphabet)
