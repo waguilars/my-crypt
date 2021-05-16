@@ -1,4 +1,4 @@
-import { es as alphabet } from '../../alphabet.json'
+import { en as alphabet } from '../../alphabet.json'
 import { getCharacterIdx, isLowerCase, normalizeKey } from '../util'
 
 const L = alphabet.length
